@@ -12,7 +12,7 @@ R7.component('Example', function (App) {
   };
 
   /* 
-   * an example of definition of a Backbone class of your componenet
+   * an example of a Backbone class of your componenet
    */
   App.Views.Example = Backbone.View.extend({
     initialize: function () {
