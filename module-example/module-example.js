@@ -15,8 +15,8 @@ R7.component('Example', function (App) {
    * an example of definition of a Backbone class of your componenet
    */
   App.Views.Example = Backbone.View.extend({
-    intialize: function () {
-      console.log('another init from model');
+    initialize: function () {
+      console.log('init from my view');
     }
   });
 
@@ -27,9 +27,9 @@ R7.component('Example', function (App) {
     this.options = _.extend({}, defaults, options);
     this.prepare();
     this.bind();
+    this.start();
 
-    // console.log('thats my App', App, this.options);
-    new App.Views.Example();
+    console.log(App, this.options, this.view);
   };
 
   /* 
@@ -37,6 +37,7 @@ R7.component('Example', function (App) {
    */
   Example.prototype.prepare = function () {
     // prepare stuff
+    this.view = new App.Views.Example();
   };
 
   /* 
@@ -44,6 +45,13 @@ R7.component('Example', function (App) {
    */
   Example.prototype.bind = function () {
     // bind stuff
+  };
+
+  /* 
+   * required method to start class
+   */
+  Example.prototype.start = function () {
+    // start stuff
   };
 
   /* 

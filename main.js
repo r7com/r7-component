@@ -5,6 +5,7 @@
 
   var R7 = {
     register: function (name, fn) {
+
       if ('undefined' === typeof R7[name]) {
         R7[name] = fn;
         return;

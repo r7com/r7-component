@@ -3,18 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+
+  <!-- deps -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
 
+  <!-- main -->
   <script src="main.js"></script>
 
+  <!-- helpers -->
   <script src="helpers/template.js"></script>
   <script src="helpers/events.js"></script>
 
+  <!-- model in a external file -->
+  <script src="models/model-example-external.js"></script>
+
+  <!-- modules -->
   <script src="module-example/module-example.js"></script>
 </head>
 <body>
+
+  <script>
+    $(function () {
+      new R7.Example({
+        myAttr: true
+      });
+    })
+  </script>
 
 </body>
 </html>
