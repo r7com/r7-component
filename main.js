@@ -5,7 +5,12 @@
 
   var R7 = {
     register: function (name, fn) {
-      R7[name] = fn;
+      if ('undefined' === typeof R7[name]) {
+        R7[name] = fn;
+        return;
+      }
+
+      throw new Error('R7: Cannot register method ' + name + '. Method already exists.');
     },
 
     component: function () {
@@ -28,8 +33,8 @@
         }
 
         return components[name];
-
       };
+
     }()
   };
 

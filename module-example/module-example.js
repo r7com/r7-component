@@ -14,7 +14,7 @@ R7.component('Example', function (App) {
   /* 
    * an example of definition of a Backbone class of your componenet
    */
-  App.Views.Example = Backbone.Model.extend({
+  App.Views.Example = Backbone.View.extend({
     intialize: function () {
       console.log('another init from model');
     }
@@ -28,7 +28,8 @@ R7.component('Example', function (App) {
     this.prepare();
     this.bind();
 
-    console.log('thats my App', App, this.options);
+    // console.log('thats my App', App, this.options);
+    new App.Views.Example();
   };
 
   /* 
