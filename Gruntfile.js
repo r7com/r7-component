@@ -5,8 +5,8 @@
     'grunt-contrib-concat',
     'grunt-contrib-uglify',
     'grunt-contrib-watch',
-    'grunt-contrib-jasmine',
-    'grunt-jasmine-coverage'
+    'grunt-open',
+    'grunt-contrib-jasmine'
   ];
 
   // ## get confis from package.json
@@ -102,6 +102,13 @@
           }
         }
       }
+    },
+
+    open: {
+      coverage: {
+        path: 'coverage/index.html',
+        app: 'google-chrome'
+      }
     }
 
   });
@@ -116,7 +123,8 @@
 
   grunt.registerTask('test', [
     'jshint',
-    'jasmine'
+    'jasmine:coverage',
+    'open:coverage'
   ]);
 
 
