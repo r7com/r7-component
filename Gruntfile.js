@@ -1,7 +1,13 @@
   module.exports = function (grunt) {
 
-  // ## load all grunt tasks
-  require('load-grunt-tasks')(grunt);
+  var tasks = [
+    'grunt-contrib-jshint',
+    'grunt-contrib-concat',
+    'grunt-contrib-uglify',
+    'grunt-contrib-watch',
+    'grunt-contrib-jasmine',
+    'grunt-jasmine-coverage'
+  ];
 
   // ## get confis from package.json
   grunt.config('pkg', grunt.file.readJSON('package.json'));
@@ -72,10 +78,36 @@
         vendor: [
           // vendor comes here if necessary
         ]
+      },
+
+      coverage: {
+        src: [
+          'src/**/*.js'
+        ],
+
+        options: {
+          specs: [
+            'specs/**/*.js'
+          ],
+          template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'coverage/coverage.json',
+            report: 'coverage',
+            thresholds: {
+              lines: 75,
+              statements: 75,
+              branches: 75,
+              functions: 90
+            }
+          }
+        }
       }
     }
 
   });
+
+  // ## load all tasks
+  tasks.forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('develop', [
     'concat',
@@ -86,5 +118,6 @@
     'jshint',
     'jasmine'
   ]);
+
 
 };
