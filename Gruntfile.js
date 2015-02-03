@@ -56,6 +56,23 @@
         ],
         tasks: ['concat']
       }
+    },
+
+    // ## jasmine
+    jasmine: {
+      src: [
+        'src/**/*.js'
+      ],
+
+      options: {
+        specs: [
+          'specs/**/*.js'
+        ],
+
+        vendor: [
+          // vendor comes here if necessary
+        ]
+      }
     }
 
   });
@@ -66,7 +83,8 @@
   ]);
 
   grunt.registerTask('test', [
-    'jshint'
+    'jshint',
+    'jasmine'
   ]);
 
 };
