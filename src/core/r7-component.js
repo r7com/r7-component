@@ -2,7 +2,6 @@
   'use strict';
 
   var components = {},
-
   R7 = {
     register: function (name, fn) {
 
