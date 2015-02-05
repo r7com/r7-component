@@ -1,4 +1,4 @@
-;(function (root) {
+;(function () {
   'use strict';
 
   var components = {},
@@ -36,7 +36,11 @@
   };
 
   R7.helpers = R7.helpers || {};
-  root.R7 = R7;
-  module.exports = R7;
 
-} ({}));
+  if (typeof module !== 'undefined') {
+    module.exports = R7;
+  }
+  else {
+    (typeof window !== 'undefined' && this.window !== window ? window : this).R7 = R7;
+  }
+}).call(this);
