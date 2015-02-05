@@ -19,14 +19,8 @@
   },
   "homepage": "https://github.com/r7com/r7-component",
   "devDependencies": {
-    "blanket": "^1.1.6",
     "chai": "^1.10.0",
     "istanbul": "^0.3.5",
     "mocha": "^2.1.0"
-  },
-  "config": {
-    "blanket": {
-      "pattern": "/**.js/"
-    }
   }
 }
