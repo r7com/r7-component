@@ -1,0 +1,32 @@
+{
+  "name": "r7-component",
+  "version": "0.0.1",
+  "description": "TODO: a readme",
+  "main": "main.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha",
+    "test-watch": "./node_modules/mocha/bin/mocha -w",
+    "test-cover": "istanbul cover ./node_modules/mocha/bin/_mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/r7com/r7-component.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/r7com/r7-component/issues"
+  },
+  "homepage": "https://github.com/r7com/r7-component",
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "chai": "^1.10.0",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "/**.js/"
+    }
+  }
+}

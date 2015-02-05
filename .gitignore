@@ -48,3 +48,8 @@ bower_components
 .bower-registry
 .bower-tmp
 
+
+## Coverage
+coverage
+coverage*
+

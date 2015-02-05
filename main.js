@@ -27,7 +27,7 @@
       }
 
       if (typeof fn === 'function') {
-        fn.call(context, components[name]);
+        fn.call(context || components[name], components[name]);
         return;
       }
 
@@ -37,5 +37,6 @@
 
   R7.helpers = R7.helpers || {};
   root.R7 = R7;
+  module.exports = R7;
 
-} (window));
+} ({}));
