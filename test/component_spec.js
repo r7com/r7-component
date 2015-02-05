@@ -17,7 +17,7 @@ describe('R7#component', function() {
     expect(comp.Routes).to.be.defined;
   });
 
-  it('should receive a callback as argument and insert the component as firt argument for callback', function() {
+  it('should receive a callback as argument and insert the component as first argument for callback', function() {
     var comp = R7.component('Tester');
     R7.component('Tester', function (App) {
       expect(comp).to.equal(App);
@@ -32,12 +32,5 @@ describe('R7#component', function() {
     var self = this;
     R7.component('Tester', cb, self);
   });
-
-  it('should set the callback context with the component when no context is given', function() {
-    var cb = function (App) {
-      expect(this).to.equal(App);
-    };
-
-    R7.component('Tester', cb);
-  });
 });
+

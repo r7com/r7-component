@@ -27,7 +27,7 @@
       }
 
       if (typeof fn === 'function') {
-        fn.call(context || components[name], components[name]);
+        fn.call(context, components[name]);
         return;
       }
 
