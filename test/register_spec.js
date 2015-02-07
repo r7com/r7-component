@@ -1,4 +1,4 @@
-var R7 = require('../main.js');
+var R7 = require('../src/core/r7-component.js');
 var expect = require('chai').expect;
 
 describe('R7#register', function() {

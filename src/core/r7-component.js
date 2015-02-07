@@ -36,6 +36,7 @@
 
   R7.helpers = R7.helpers || {};
 
+  /* istanbul ignore else */
   if (typeof module !== 'undefined') {
     module.exports = R7;
   }
