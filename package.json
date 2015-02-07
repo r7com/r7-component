@@ -1,7 +1,7 @@
 {
   "name": "r7-component",
-  "version": "0.0.1",
-  "description": "TODO: a readme",
+  "version": "0.0.0",
+  "description": "R7 namespace generator",
   "main": "main.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha",
@@ -12,8 +12,12 @@
     "type": "git",
     "url": "https://github.com/r7com/r7-component.git"
   },
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "R7",
+    "javascript"
+  ],
+  "author": "R7.com",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/r7com/r7-component/issues"
   },
@@ -21,6 +25,12 @@
   "devDependencies": {
     "chai": "^1.10.0",
     "istanbul": "^0.3.5",
-    "mocha": "^2.1.0"
+    "mocha": "^2.1.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.0",
+    "load-grunt-tasks": "^3.1.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1"
   }
 }

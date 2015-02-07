@@ -49,6 +49,8 @@ bower_components
 .bower-tmp
 
 
+dist
+
 ## Coverage
 coverage
 coverage*
