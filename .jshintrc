@@ -58,6 +58,7 @@
     "R7": true,
     "_": true,
     "Backbone": true,
-    "console": true
+    "console": true,
+    "$": true
   }
 }
