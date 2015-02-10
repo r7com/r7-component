@@ -52,6 +52,7 @@
   "validthis": false,
 
   "browser": true,
+  "node": true,
 
   "globals": {
     "R7": true,
