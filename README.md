@@ -1,3 +1,6 @@
-## R7 Component
+# R7 Component
+> R7 javascript base component
 
-TODO: a readme
+- - - - -
+### License
+[WTFPL](http://www.wtfpl.net/)
