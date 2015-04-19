@@ -4,7 +4,9 @@
   "description": "R7 namespace generator",
   "main": "main.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "./node_modules/mocha/bin/mocha",
+    "test-watch": "./node_modules/mocha/bin/mocha -w",
+    "test-cover": "istanbul cover ./node_modules/mocha/bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -21,6 +23,9 @@
   },
   "homepage": "https://github.com/r7com/r7-component",
   "devDependencies": {
+    "chai": "^1.10.0",
+    "istanbul": "^0.3.5",
+    "mocha": "^2.1.0",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.11.0",
     "load-grunt-tasks": "^3.1.0",
