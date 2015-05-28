@@ -6,7 +6,8 @@ module.exports = function (grunt) {
     'grunt-contrib-uglify',
     'grunt-contrib-watch',
     'grunt-open',
-    'grunt-contrib-jasmine'
+    'grunt-contrib-jasmine',
+    'grunt-karma'
   ];
 
   // ## get confis from package.json
@@ -14,7 +15,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     // ### dist name
-    banner_name: '/** ' + grunt.config("pkg").name + ' -v' + grunt.config("pkg").version + 
+    banner_name: '/** ' + grunt.config("pkg").name + ' -v' + grunt.config("pkg").version +
               '\n* Copyright (c) '+ grunt.template.today("yyyy") + ' ' + grunt.config('pkg').author +
               '\n* Licensed ' + grunt.config('pkg').license + '\n*/\n\n',
 
@@ -109,8 +110,18 @@ module.exports = function (grunt) {
         path: 'coverage/index.html',
         app: 'google-chrome'
       }
+    },
+    karma: {
+      unit: {
+        files: [
+          { src: ['src/**/*.js', 'specs/**/*.js'] }
+        ],
+        autoWatch: true,
+        singleRun: false,
+        browsers: ['PhantomJS'],
+        frameworks: ['jasmine']
+      }
     }
-
   });
 
   // ## load all tasks
