@@ -1,4 +1,6 @@
 module.exports = function (grunt) {
+  'use strict';
+  // ## load all grunt tasks
 
   var tasks = [
     'grunt-contrib-jshint',
@@ -18,9 +20,10 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     // ### dist name
-    banner_name: '/** ' + grunt.config("pkg").name + ' -v' + grunt.config("pkg").version +
-              '\n* Copyright (c) '+ grunt.template.today("yyyy") + ' ' + grunt.config('pkg').author +
-              '\n* Licensed ' + grunt.config('pkg').license + '\n*/\n\n',
+    bannerName: '/** ' + grunt.config('pkg').name + ' -v' + grunt.config('pkg').version +
+              '\n* Copyright (c) '+ grunt.template.today('yyyy') + ' ' +
+              grunt.config('pkg').author + '\n* Licensed ' +
+              grunt.config('pkg').license + '\n*/\n\n',
 
     // ### jshint
     jshint: {
@@ -29,19 +32,19 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        'src/**/*.js'
+        'src/**/*.js',
+        'specs/**/*.js',
+        'example/**/*.js'
       ]
     },
 
     // ### concat
     concat: {
       options: {
-        banner: '<%= banner_name %>'
+        banner: '<%= bannerName %>'
       },
       dist: {
-        src: [
-          'src/core/r7-component.js',
-        ],
+        src: ['src/core/r7-component.js'],
         dest: 'dist/r7-component.js'
       }
     },
@@ -49,7 +52,7 @@ module.exports = function (grunt) {
     // ### uglify
     uglify: {
       options: {
-        banner: '<%= banner_name %>'
+        banner: '<%= bannerName %>'
       },
       scripts: {
         files: {
@@ -61,9 +64,7 @@ module.exports = function (grunt) {
     // ### watch
     watch: {
       scripts: {
-        files: [
-          'src/**/**.js',
-        ],
+        files: ['src/**/**.js'],
         tasks: ['concat']
       }
     },

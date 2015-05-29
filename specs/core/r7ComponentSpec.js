@@ -1,7 +1,7 @@
 describe('R7',function(){
+  'use strict';
 
   describe('#component', function () {
-    'use strict';
 
     it('Returns another Object with the given name as first parameter', function () {
 
@@ -28,7 +28,7 @@ describe('R7',function(){
           }
         };
 
-        spyOn(obj, "callbackFn");
+        spyOn(obj, 'callbackFn');
 
         R7.component('Example', obj.callbackFn);
 
