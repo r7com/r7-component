@@ -136,8 +136,8 @@ module.exports = function (grunt) {
   ]);
 
 
-  if(!process.env.BUILD_ENV === 'travis') {
-    testTasks.push('open:coverage')
+  if(process.env.BUILD_ENV !== 'travis') {
+    testTasks.push('open:coverage');
   }
 
   grunt.registerTask('test', testTasks);
