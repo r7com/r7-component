@@ -116,7 +116,7 @@ module.exports = function (grunt) {
 
     open: {
       coverage: {
-        path: 'coverage/index.html',
+        path: 'coverage/lcov-report/index.html',
         app: 'google-chrome'
       }
     },
