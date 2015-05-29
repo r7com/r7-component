@@ -126,9 +126,17 @@ module.exports = function (grunt) {
           { src: ['src/**/*.js', 'specs/**/*.js'] }
         ],
         autoWatch: true,
-        singleRun: false,
+        singleRun: true,
         browsers: ['PhantomJS'],
-        frameworks: ['jasmine']
+        frameworks: ['jasmine'],
+        preprocessors: {
+         'src/**/*.js': ['coverage']
+        },
+        reporters: ['coverage'],
+        coverageReporter: {
+          type: 'lcov',
+          dir: 'coverage'
+        }
       }
     }
   });
