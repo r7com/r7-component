@@ -1,9 +1,20 @@
 module.exports = function (grunt) {
   'use strict';
-
   // ## load all grunt tasks
-  require('load-grunt-tasks')(grunt);
 
+  var tasks = [
+    'grunt-contrib-jshint',
+    'grunt-contrib-concat',
+    'grunt-contrib-uglify',
+    'grunt-contrib-watch',
+    'grunt-open',
+    'grunt-contrib-jasmine',
+    'grunt-karma'
+  ];
+  var testTasks = [
+    'jshint',
+    'jasmine:coverage'
+  ];
   // ## get confis from package.json
   grunt.config('pkg', grunt.file.readJSON('package.json'));
 
@@ -56,10 +67,80 @@ module.exports = function (grunt) {
         files: ['src/**/**.js'],
         tasks: ['concat']
       }
+    },
+
+    // ## jasmine
+    jasmine: {
+      src: [
+        'src/**/*.js'
+      ],
+
+      options: {
+        specs: [
+          'specs/**/*.js'
+        ],
+
+        vendor: [
+          // vendor comes here if necessary
+        ]
+      },
+
+      coverage: {
+        src: [
+          'src/**/*.js'
+        ],
+
+        options: {
+          specs: [
+            'specs/**/*.js'
+          ],
+          template: require('grunt-template-jasmine-istanbul'),
+          templateOptions: {
+            coverage: 'coverage/coverage.json',
+            report: 'coverage',
+            thresholds: {
+              lines: 75,
+              statements: 75,
+              branches: 75,
+              functions: 90
+            }
+          }
+        }
+      }
+    },
+
+    open: {
+      coverage: {
+        path: 'coverage/index.html',
+        app: 'google-chrome'
+      }
+    },
+    karma: {
+      unit: {
+        files: [
+          { src: ['src/**/*.js', 'specs/**/*.js'] }
+        ],
+        autoWatch: true,
+        singleRun: false,
+        browsers: ['PhantomJS'],
+        frameworks: ['jasmine']
+      }
     }
   });
 
-  grunt.registerTask('develop', ['concat', 'watch']);
+  // ## load all tasks
+  tasks.forEach(grunt.loadNpmTasks);
 
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('develop', [
+    'concat',
+    'watch'
+  ]);
+
+
+  if(process.env.BUILD_ENV !== 'travis') {
+    testTasks.push('open:coverage');
+  }
+
+  grunt.registerTask('test', testTasks);
+
 };
