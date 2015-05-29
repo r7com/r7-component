@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/r7com/r7-component",
   "devDependencies": {
+    "codeclimate-test-reporter": "0.0.4",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-jasmine": "^0.8.1",
