@@ -9,7 +9,10 @@ module.exports = function (grunt) {
     'grunt-contrib-jasmine',
     'grunt-karma'
   ];
-
+  var testTasks = [
+    'jshint',
+    'jasmine:coverage'
+  ];
   // ## get confis from package.json
   grunt.config('pkg', grunt.file.readJSON('package.json'));
 
@@ -132,11 +135,11 @@ module.exports = function (grunt) {
     'watch'
   ]);
 
-  grunt.registerTask('test', [
-    'jshint',
-    'jasmine:coverage',
-    'open:coverage'
-  ]);
 
+  if(!process.env.BUILD_ENV === 'travis') {
+    testTasks.push('open:coverage')
+  }
+
+  grunt.registerTask('test', testTasks);
 
 };

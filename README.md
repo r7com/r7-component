@@ -1,5 +1,5 @@
 ## R7 Component
 
-TODO: a readme
+![travis](https://travis-ci.org/r7com/r7-component.svg)
 
-[https://travis-ci.org/r7com/r7-component.svg]
+TODO: a readme
