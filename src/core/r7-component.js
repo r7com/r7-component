@@ -35,6 +35,6 @@
   };
 
   R7.helpers = R7.helpers || {};
-  root.R7 = R7;
+  root.R7 = root.R7 || R7;
 
 } (window));
