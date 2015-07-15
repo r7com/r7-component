@@ -1,6 +1,6 @@
 {
   "name": "r7-component",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "R7 namespace generator",
   "main": "main.js",
   "scripts": {
