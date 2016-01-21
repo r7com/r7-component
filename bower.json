@@ -7,7 +7,6 @@
     "component",
     "backbone",
     "javascript",
-    "backbone"
   ],
   "main": "src/core/r7-component.js",
   "homepage": "https://github.com/r7com/r7-component",
